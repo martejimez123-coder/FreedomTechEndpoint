@@ -357,22 +357,31 @@ export default function FreedomTechWebsite() {
                 Contact FreedomTech LLC for professional IT services in Philadelphia. Tell us what you need help with, and we will follow up with a practical next step.
               </p>
               <div className="contact-list">
-                <span><Icon name="mail" /> Info@freedomtechendpoint.com</span>
+                <span><Icon name="mail" /> info@freedomtechphilly.com</span>
+                <span><Icon name="phone" /> +1 (267) 243-5201</span>
                 <span><Icon name="map" /> Philadelphia, PA and surrounding areas</span>
               </div>
             </div>
-            <form className="contact-form reveal reveal-text" aria-label="Request IT support form">
+            <form
+              className="contact-form reveal reveal-text"
+              aria-label="Request IT support form"
+              action="https://formsubmit.co/info@freedomtechphilly.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New FreedomTech support request" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <h3>Request IT Support</h3>
               <p>Fill out the form and we will help you figure out the right solution.</p>
               <div className="form-row">
-                <input placeholder="Name" aria-label="Name" />
-                <input placeholder="Business Name" aria-label="Business Name" />
+                <input name="name" placeholder="Name" aria-label="Name" required />
+                <input name="business_name" placeholder="Business Name" aria-label="Business Name" />
               </div>
               <div className="form-row">
-                <input placeholder="Email" aria-label="Email" />
-                <input placeholder="Phone" aria-label="Phone" />
+                <input name="email" type="email" placeholder="Email" aria-label="Email" required />
+                <input name="phone" type="tel" placeholder="Phone" aria-label="Phone" />
               </div>
-              <select aria-label="Service Needed" defaultValue="">
+              <select name="service_needed" aria-label="Service Needed" defaultValue="" required>
                 <option value="" disabled>Service Needed</option>
                 <option>IT Support</option>
                 <option>Computer Setup</option>
@@ -381,9 +390,8 @@ export default function FreedomTechWebsite() {
                 <option>Network Troubleshooting</option>
                 <option>Consultation</option>
               </select>
-              <textarea placeholder="Message" aria-label="Message" />
-              <button type="button">Submit Request <Icon name="arrow" /></button>
-              <small>Form connection placeholder: connect this to your email, CRM, website builder, or hosting provider before launch.</small>
+              <textarea name="message" placeholder="Message" aria-label="Message" required />
+              <button type="submit">Submit Request <Icon name="arrow" /></button>
             </form>
           </div>
         </section>}
