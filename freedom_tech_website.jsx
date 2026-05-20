@@ -330,8 +330,8 @@ export default function FreedomTechWebsite() {
               <h2>Built for clients who need professionalism from the first conversation.</h2>
             </div>
             <div className="quote-card">
-              <p>Client testimonial placeholder. Add a real review or client quote here once available.</p>
-              <span>FreedomTech LLC client</span>
+              <p>Client success stories are being prepared and will be available soon.</p>
+              <span>FreedomTech LLC</span>
             </div>
           </div>
         </section>}
