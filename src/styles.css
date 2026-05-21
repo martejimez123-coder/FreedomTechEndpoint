@@ -105,10 +105,10 @@ textarea {
 }
 
 .brand strong {
-  font-family: "Bree Serif", Georgia, serif;
+  font-family: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   letter-spacing: 0;
-  font-weight: 400;
+  font-weight: 900;
 }
 
 .brand small {
