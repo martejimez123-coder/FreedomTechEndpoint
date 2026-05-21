@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --navy: #07111f;
@@ -367,7 +367,7 @@ textarea {
 
 .wordmark-text {
   color: #213e63;
-  font-family: "Cooper Black", "Cooper Std Black", "Bookman Old Style", Georgia, serif;
+  font-family: Inter, "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(2.15rem, 4.2vw, 3.35rem);
   font-weight: 900;
   letter-spacing: 0;
