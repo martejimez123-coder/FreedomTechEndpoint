@@ -192,7 +192,7 @@ export default function FreedomTechWebsite() {
             <div className="hero-panel reveal">
               <div className="support-panel">
                 <div className="support-brand">
-                  <img src="/3.png" alt="FreedomTech wordmark" />
+                  <span className="wordmark-text">Freedomtech</span>
                 </div>
                 <div className="support-panel-copy">
                   <p>Philadelphia IT support</p>

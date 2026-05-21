@@ -365,6 +365,17 @@ textarea {
   transform: translateY(1px);
 }
 
+.wordmark-text {
+  color: #213e63;
+  font-family: "Cooper Black", "Cooper Std Black", "Bookman Old Style", Georgia, serif;
+  font-size: clamp(2.15rem, 4.2vw, 3.35rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  transform: translateY(-1px);
+  text-transform: none;
+}
+
 .support-panel {
   padding: 28px;
 }
