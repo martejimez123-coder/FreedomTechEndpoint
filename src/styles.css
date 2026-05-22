@@ -23,6 +23,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -40,6 +44,34 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+*:focus-visible {
+  outline: 3px solid #ffd000;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 7px rgba(7, 17, 31, 0.32);
+}
+
+.skip-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: #ffd000;
+  font-weight: 900;
+  transform: translateY(-140%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 .site-shell {
@@ -560,6 +592,7 @@ textarea {
   text-transform: uppercase;
 }
 
+.section-header h1,
 .section-header h2 {
   margin: 0;
   font-size: clamp(2.15rem, 4.4vw, 4rem);
@@ -577,6 +610,10 @@ textarea {
 }
 
 .section-header.light h2 {
+  color: var(--white);
+}
+
+.section-header.light h1 {
   color: var(--white);
 }
 
@@ -930,6 +967,17 @@ textarea {
   gap: 14px;
 }
 
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  color: #26364d;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -966,11 +1014,53 @@ textarea {
   background: linear-gradient(135deg, var(--red), var(--blue));
   font-weight: 900;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(200, 16, 46, 0.28);
 }
 
 .contact-form small {
   color: #78869a;
   line-height: 1.55;
+}
+
+.accessibility-wrap {
+  width: min(860px, calc(100% - 40px));
+}
+
+.accessibility-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 36px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.accessibility-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+.accessibility-card h2:not(:first-child) {
+  margin-top: 28px;
+}
+
+.accessibility-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.accessibility-card a,
+.footer-grid a {
+  color: inherit;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .site-footer {
@@ -1166,5 +1256,32 @@ textarea {
   .contact-form,
   .quote-card {
     padding: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-text h1,
+  .reveal-text h2,
+  .reveal-text h3,
+  .reveal-text p,
+  .reveal-text span,
+  .domino-grid > * {
+    opacity: 1;
+    transform: none;
   }
 }

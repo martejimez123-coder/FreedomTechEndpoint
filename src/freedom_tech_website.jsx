@@ -39,7 +39,7 @@ const faqs = [
   ["Do you list pricing online?", "Technology needs vary by scope and location. Custom quotes are available after a quick conversation about what you need."],
 ];
 
-const pages = ["home", "services", "about", "industries", "contact"];
+const pages = ["home", "services", "about", "industries", "contact", "accessibility"];
 
 function getInitialPage() {
   if (typeof window === "undefined") return "home";
@@ -148,9 +148,11 @@ export default function FreedomTechWebsite() {
   const isAbout = currentPage === "about";
   const isIndustries = currentPage === "industries";
   const isContact = currentPage === "contact";
+  const isAccessibility = currentPage === "accessibility";
 
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <header className="site-header">
         <nav className="nav-wrap" aria-label="Primary navigation">
           <a className="brand" href={pageHref("home")} onClick={(event) => goToPage(event, "home")} aria-label="FreedomTech LLC home">
@@ -158,17 +160,17 @@ export default function FreedomTechWebsite() {
             <span><strong>FreedomTech LLC</strong><small>Philadelphia IT Services</small></span>
           </a>
           <div className="nav-links">
-            <a className={isHome ? "active" : ""} href={pageHref("home")} onClick={(event) => goToPage(event, "home")}>Home</a>
-            <a className={isServices ? "active" : ""} href={pageHref("services")} onClick={(event) => goToPage(event, "services")}>Services</a>
-            <a className={isAbout ? "active" : ""} href={pageHref("about")} onClick={(event) => goToPage(event, "about")}>About</a>
-            <a className={isIndustries ? "active" : ""} href={pageHref("industries")} onClick={(event) => goToPage(event, "industries")}>Who We Help</a>
-            <a className={isContact ? "active" : ""} href={pageHref("contact")} onClick={(event) => goToPage(event, "contact")}>Contact</a>
+            <a className={isHome ? "active" : ""} aria-current={isHome ? "page" : undefined} href={pageHref("home")} onClick={(event) => goToPage(event, "home")}>Home</a>
+            <a className={isServices ? "active" : ""} aria-current={isServices ? "page" : undefined} href={pageHref("services")} onClick={(event) => goToPage(event, "services")}>Services</a>
+            <a className={isAbout ? "active" : ""} aria-current={isAbout ? "page" : undefined} href={pageHref("about")} onClick={(event) => goToPage(event, "about")}>About</a>
+            <a className={isIndustries ? "active" : ""} aria-current={isIndustries ? "page" : undefined} href={pageHref("industries")} onClick={(event) => goToPage(event, "industries")}>Who We Help</a>
+            <a className={isContact ? "active" : ""} aria-current={isContact ? "page" : undefined} href={pageHref("contact")} onClick={(event) => goToPage(event, "contact")}>Contact</a>
           </div>
           <Button href={pageHref("contact")}>Request Support</Button>
         </nav>
       </header>
 
-      <main>
+      <main id="main-content">
         {isHome && <section className="hero" id="home">
           <div className="hero-bg" />
           <div className="container hero-grid">
@@ -236,11 +238,12 @@ export default function FreedomTechWebsite() {
                     className="service-toggle"
                     onClick={() => toggleService(title)}
                     aria-expanded={openServices.includes(title)}
+                    aria-controls={`service-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                   >
                     <span className="card-icon"><Icon name={icon} /></span>
                     <span>{title}</span>
                   </button>
-                  <p>{text}</p>
+                  <p id={`service-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{text}</p>
                 </article>
               ))}
             </div>
@@ -374,25 +377,67 @@ export default function FreedomTechWebsite() {
               <h3>Request IT Support</h3>
               <p>Fill out the form and we will help you figure out the right solution.</p>
               <div className="form-row">
-                <input name="name" placeholder="Name" aria-label="Name" required />
-                <input name="business_name" placeholder="Business Name" aria-label="Business Name" />
+                <label className="field">
+                  <span>Name</span>
+                  <input name="name" autoComplete="name" placeholder="Jane Smith" required />
+                </label>
+                <label className="field">
+                  <span>Business Name</span>
+                  <input name="business_name" autoComplete="organization" placeholder="Company or organization" />
+                </label>
               </div>
               <div className="form-row">
-                <input name="email" type="email" placeholder="Email" aria-label="Email" required />
-                <input name="phone" type="tel" placeholder="Phone" aria-label="Phone" />
+                <label className="field">
+                  <span>Email</span>
+                  <input name="email" type="email" autoComplete="email" placeholder="you@example.com" required />
+                </label>
+                <label className="field">
+                  <span>Phone</span>
+                  <input name="phone" type="tel" autoComplete="tel" placeholder="+1 (267) 243-5201" />
+                </label>
               </div>
-              <select name="service_needed" aria-label="Service Needed" defaultValue="" required>
-                <option value="" disabled>Service Needed</option>
-                <option>IT Support</option>
-                <option>Computer Setup</option>
-                <option>Microsoft 365 Support</option>
-                <option>Printer / Peripheral Setup</option>
-                <option>Network Troubleshooting</option>
-                <option>Consultation</option>
-              </select>
-              <textarea name="message" placeholder="Message" aria-label="Message" required />
+              <label className="field">
+                <span>Service Needed</span>
+                <select name="service_needed" defaultValue="" required>
+                  <option value="" disabled>Select a service</option>
+                  <option>IT Support</option>
+                  <option>Computer Setup</option>
+                  <option>Microsoft 365 Support</option>
+                  <option>Printer / Peripheral Setup</option>
+                  <option>Network Troubleshooting</option>
+                  <option>Consultation</option>
+                </select>
+              </label>
+              <label className="field">
+                <span>Message</span>
+                <textarea name="message" placeholder="Tell us what you need help with" required />
+              </label>
               <button type="submit">Submit Request <Icon name="arrow" /></button>
             </form>
+          </div>
+        </section>}
+
+        {isAccessibility && <section className="section-pad muted page-section" id="accessibility">
+          <div className="container accessibility-wrap">
+            <div className="section-header reveal reveal-text">
+              <p>Accessibility</p>
+              <h1>Accessibility Statement</h1>
+              <span>FreedomTech LLC is committed to making this website usable for all visitors, including people using assistive technology.</span>
+            </div>
+            <div className="accessibility-card reveal reveal-text">
+              <h2>Our accessibility goal</h2>
+              <p>
+                We aim to follow WCAG Level AA accessibility practices where practical, including keyboard-friendly navigation, readable contrast, visible focus indicators, clear form labels, reduced-motion support, and structured page content.
+              </p>
+              <h2>Need help using this site?</h2>
+              <p>
+                If you experience a problem accessing information, completing the contact form, or using any part of this website, please contact FreedomTech LLC so we can assist you and improve the experience.
+              </p>
+              <p>
+                Email: <a href="mailto:info@freedomtechphilly.com">info@freedomtechphilly.com</a><br />
+                Phone: <a href="tel:+12672435201">+1 (267) 243-5201</a>
+              </p>
+            </div>
           </div>
         </section>}
       </main>
@@ -400,7 +445,10 @@ export default function FreedomTechWebsite() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <p>Copyright {new Date().getFullYear()} FreedomTech LLC. All rights reserved.</p>
-          <p>IT services in Philadelphia | Business IT support | Onsite and remote support</p>
+          <p>
+            IT services in Philadelphia | Business IT support | Onsite and remote support |{" "}
+            <a href={pageHref("accessibility")} onClick={(event) => goToPage(event, "accessibility")}>Accessibility</a>
+          </p>
         </div>
       </footer>
     </div>
