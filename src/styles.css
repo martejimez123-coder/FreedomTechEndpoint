@@ -1027,11 +1027,11 @@ textarea {
   line-height: 1.55;
 }
 
-.accessibility-wrap {
+.legal-wrap {
   width: min(860px, calc(100% - 40px));
 }
 
-.accessibility-card {
+.legal-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 36px;
@@ -1039,23 +1039,23 @@ textarea {
   box-shadow: var(--shadow);
 }
 
-.accessibility-card h2 {
+.legal-card h2 {
   margin: 0 0 12px;
   font-size: 1.35rem;
 }
 
-.accessibility-card h2:not(:first-child) {
+.legal-card h2:not(:first-child) {
   margin-top: 28px;
 }
 
-.accessibility-card p {
+.legal-card p {
   margin: 0;
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.75;
 }
 
-.accessibility-card a,
+.legal-card a,
 .footer-grid a {
   color: inherit;
   font-weight: 900;

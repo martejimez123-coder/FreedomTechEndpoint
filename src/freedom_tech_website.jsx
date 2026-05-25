@@ -39,7 +39,7 @@ const faqs = [
   ["Do you list pricing online?", "Technology needs vary by scope and location. Custom quotes are available after a quick conversation about what you need."],
 ];
 
-const pages = ["home", "services", "about", "industries", "contact", "accessibility"];
+const pages = ["home", "services", "about", "industries", "contact", "privacy", "terms", "accessibility"];
 
 function getInitialPage() {
   if (typeof window === "undefined") return "home";
@@ -148,6 +148,8 @@ export default function FreedomTechWebsite() {
   const isAbout = currentPage === "about";
   const isIndustries = currentPage === "industries";
   const isContact = currentPage === "contact";
+  const isPrivacy = currentPage === "privacy";
+  const isTerms = currentPage === "terms";
   const isAccessibility = currentPage === "accessibility";
 
   return (
@@ -417,14 +419,90 @@ export default function FreedomTechWebsite() {
           </div>
         </section>}
 
+        {isPrivacy && <section className="section-pad muted page-section" id="privacy">
+          <div className="container legal-wrap">
+            <div className="section-header reveal reveal-text">
+              <p>Privacy</p>
+              <h1>Privacy Policy</h1>
+              <span>Last updated May 24, 2026. This policy explains how FreedomTech LLC handles information submitted through this website.</span>
+            </div>
+            <div className="legal-card reveal reveal-text">
+              <h2>Information we collect</h2>
+              <p>
+                When you contact FreedomTech LLC through this website, we may collect your name, business name, email address, phone number, service request details, and any message you choose to send.
+              </p>
+              <h2>How we use information</h2>
+              <p>
+                We use submitted information to respond to requests, provide IT support, schedule consultations, communicate with prospective clients, improve our services, and maintain business records.
+              </p>
+              <h2>Third-party services</h2>
+              <p>
+                This website may use third-party services such as GitHub Pages for hosting, Google Fonts for website typography, and FormSubmit to process contact form submissions. These providers may process technical information needed to operate their services.
+              </p>
+              <h2>Sharing information</h2>
+              <p>
+                FreedomTech LLC does not sell personal information. We may share information with service providers that help operate the website or business, when required by law, or when needed to protect our rights, clients, website, or services.
+              </p>
+              <h2>Data security</h2>
+              <p>
+                We use reasonable administrative and technical practices to protect information, but no website, email, or online form can be guaranteed completely secure. Please avoid submitting passwords, sensitive account credentials, or confidential system details through the contact form.
+              </p>
+              <h2>Your choices</h2>
+              <p>
+                To request access, correction, or deletion of information you submitted through this website, contact us at <a href="mailto:info@freedomtechphilly.com">info@freedomtechphilly.com</a>.
+              </p>
+            </div>
+          </div>
+        </section>}
+
+        {isTerms && <section className="section-pad muted page-section" id="terms">
+          <div className="container legal-wrap">
+            <div className="section-header reveal reveal-text">
+              <p>Terms</p>
+              <h1>Terms of Service</h1>
+              <span>Last updated May 24, 2026. These terms describe basic conditions for using this website and contacting FreedomTech LLC.</span>
+            </div>
+            <div className="legal-card reveal reveal-text">
+              <h2>Website information</h2>
+              <p>
+                The information on this website is provided for general business and informational purposes. It does not create a client relationship, service agreement, warranty, or guarantee of availability.
+              </p>
+              <h2>Service requests</h2>
+              <p>
+                Submitting a contact form, email, or phone request does not guarantee immediate support or acceptance of a project. Services, scope, timelines, and pricing are handled through separate communication, quotes, or agreements.
+              </p>
+              <h2>No emergency guarantee</h2>
+              <p>
+                This website is not intended for emergency response. If your business has an urgent outage, security incident, or safety concern, use appropriate emergency, vendor, or internal escalation channels in addition to contacting FreedomTech LLC.
+              </p>
+              <h2>Acceptable use</h2>
+              <p>
+                You agree not to misuse this website, interfere with its operation, submit harmful code, attempt unauthorized access, or use the website for fraudulent, unlawful, or abusive activity.
+              </p>
+              <h2>Third-party links and tools</h2>
+              <p>
+                This website may rely on third-party tools or links. FreedomTech LLC is not responsible for the content, policies, security, or practices of third-party websites or providers.
+              </p>
+              <h2>Limitation of liability</h2>
+              <p>
+                To the fullest extent permitted by law, FreedomTech LLC is not liable for damages arising from use of this website, inability to use the website, or reliance on general website information.
+              </p>
+              <h2>Contact</h2>
+              <p>
+                Questions about these terms can be sent to <a href="mailto:info@freedomtechphilly.com">info@freedomtechphilly.com</a>.
+              </p>
+            </div>
+          </div>
+        </section>}
+
         {isAccessibility && <section className="section-pad muted page-section" id="accessibility">
-          <div className="container accessibility-wrap">
+          <div className="container legal-wrap">
             <div className="section-header reveal reveal-text">
               <p>Accessibility</p>
               <h1>Accessibility Statement</h1>
               <span>FreedomTech LLC is committed to making this website usable for all visitors, including people using assistive technology.</span>
             </div>
-            <div className="accessibility-card reveal reveal-text">
+            <div className="legal-card reveal reveal-text">
               <h2>Our accessibility goal</h2>
               <p>
                 We aim to follow WCAG Level AA accessibility practices where practical, including keyboard-friendly navigation, readable contrast, visible focus indicators, clear form labels, reduced-motion support, and structured page content.
@@ -447,6 +525,8 @@ export default function FreedomTechWebsite() {
           <p>Copyright {new Date().getFullYear()} FreedomTech LLC. All rights reserved.</p>
           <p>
             IT services in Philadelphia | Business IT support | Onsite and remote support |{" "}
+            <a href={pageHref("privacy")} onClick={(event) => goToPage(event, "privacy")}>Privacy Policy</a> |{" "}
+            <a href={pageHref("terms")} onClick={(event) => goToPage(event, "terms")}>Terms</a> |{" "}
             <a href={pageHref("accessibility")} onClick={(event) => goToPage(event, "accessibility")}>Accessibility</a>
           </p>
         </div>
