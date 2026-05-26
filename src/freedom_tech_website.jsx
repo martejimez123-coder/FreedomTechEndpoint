@@ -156,6 +156,9 @@ export default function FreedomTechWebsite() {
     <div className="site-shell">
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <header className="site-header">
+        <div className="dev-banner" role="status">
+          Under Development - This website is for review purposes only and is not for commercial use.
+        </div>
         <nav className="nav-wrap" aria-label="Primary navigation">
           <a className="brand" href={pageHref("home")} onClick={(event) => goToPage(event, "home")} aria-label="FreedomTech LLC home">
             <span className="brand-mark"><img src="/2.png" alt="" /></span>
