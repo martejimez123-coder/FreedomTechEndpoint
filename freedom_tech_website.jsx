@@ -5,7 +5,7 @@ const services = [
   ["desk", "Help Desk Support", "Friendly assistance for staff who need clear answers, fast triage, and dependable follow-through."],
   ["laptop", "Computer Setup & Deployment", "Professional setup, configuration, and rollout support for desktops, laptops, and new users."],
   ["wrench", "Device Troubleshooting", "Hands-on diagnosis for performance issues, software errors, access problems, and device reliability."],
-  ["printer", "Printer & Peripheral Setup", "Setup and support for printers, scanners, docks, displays, and the tools your office uses daily."],
+  ["printer", "Printer & Peripheral Setup", "Setuph and support for printers, scanners, docks, displays, and the tools your office uses daily."],
   ["cloud", "Microsoft 365 Support", "Practical help with email, Microsoft apps, accounts, access issues, and productivity workflows."],
   ["shield", "Endpoint Support", "Support for business workstations and user devices so teams can work with fewer interruptions."],
   ["windows", "Windows PC Support", "Troubleshooting, setup, updates, and optimization for Windows-based business environments."],
@@ -370,7 +370,7 @@ export default function FreedomTechWebsite() {
             >
               <input type="hidden" name="_subject" value="New FreedomTech support request" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_captcha" value="true" />
               <h3>Request IT Support</h3>
               <p>Fill out the form and we will help you figure out the right solution.</p>
               <div className="form-row">
