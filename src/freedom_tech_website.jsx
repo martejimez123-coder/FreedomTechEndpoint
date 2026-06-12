@@ -9,7 +9,7 @@ const services = [
 ["cloud", "Microsoft 365 Support", "Practical help with email, Microsoft apps, accounts, access issues, and productivity workflows."],
 ["shield", "Endpoint Support", "Support for business workstations and user devices so teams can work with fewer interruptions."],
 ["windows", "Windows PC Support", "Troubleshooting, setup, updates, and optimization for Windows-based business environments."],
-["network", "Network & Connectivity", "Help with Wi-Fi, internet access, device connectivity, and common office network issues."],
+["network", "Network & Connectivity", "Help with Wi-Fi, internet accehss, device connectivity, and common office network issues."],
 ["briefcase", "Technology Consulting", "Straightforward guidance for technology decisions, office improvements, and practical planning."],
 ["map", "Onsite & Remote Support", "Flexible support options for Philadelphia-area businesses, offices, churches, and organizations."],
 ["users", "User Support & Training", "Clear, patient support that helps teams understand tools and avoid repeat technology issues."],
@@ -391,7 +391,7 @@ Contact FreedomTech LLC for professional IT services in Philadelphia. Tell us wh
 </p>
 <div className="contact-list">
 <span><Icon name="mail" /> info@freedomtechphilly.com</span>
-<span><Icon name="phone" /> +1 (267) 243-5201</span>
+
 <span><Icon name="map" /> Philadelphia, PA and surrounding areas</span>
 </div>
 </div>
@@ -423,7 +423,7 @@ method="POST"
 </label>
 <label className="field">
 <span>Phone</span>
-<input name="phone" type="tel" autoComplete="tel" placeholder="+1 (267) 243-5201" />
+<input name="phone" type="tel" autoComplete="tel" placeholder="Your phone number" />
 </label>
 </div>
 <label className="field">
@@ -544,8 +544,8 @@ We aim to follow WCAG Level AA accessibility practices where practical, includin
 If you experience a problem accessing information, completing the contact form, or using any part of this website, please contact FreedomTech LLC so we can assist you and improve the experience.
 </p>
 <p>
-Email: <a href="mailto:info@freedomtechphilly.com">info@freedomtechphilly.com</a><br />
-Phone: <a href="tel:+12672435201">+1 (267) 243-5201</a>
+Email: <a href="mailto:info@freedomtechphilly.com">info@freedomtechphilly.com</a>
+
 </p>
 </div>
 </div>
