@@ -358,8 +358,7 @@ export default function FreedomTechWebsite() {
               </p>
               <div className="contact-list">
                 <span><Icon name="mail" /> info@freedomtechphilly.com</span>
-                <span><Icon name="phone" /> +1 (267) 243-5201</span>
-                <span><Icon name="map" /> Philadelphia, PA and surrounding areas</span>
+<span><Icon name="map" /> Philadelphia, PA and surrounding areas</span>
               </div>
             </div>
             <form
