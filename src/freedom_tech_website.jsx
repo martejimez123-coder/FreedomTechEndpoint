@@ -442,7 +442,9 @@ method="POST"
 <span>Message</span>
 <textarea name="message" placeholder="Tell us what you need help with" required />
 </label>
+<small>Please do not submit patient health information (PHI), passwords, or other sensitive account details through this form.</small>
 <button type="submit">Submit Request <Icon name="arrow" /></button>
+<small>Your information is used only to respond to your request. See our <a href={pageHref("privacy")} onClick={(event) => goToPage(event, "privacy")}>Privacy Policy</a>.</small>
 </form>
 </div>
 </section>}
@@ -474,6 +476,10 @@ FreedomTech LLC does not sell personal information. We may share information wit
 <h2>Data security</h2>
 <p>
 We use reasonable administrative and technical practices to protect information, but no website, email, or online form can be guaranteed completely secure. Please avoid submitting passwords, sensitive account credentials, or confidential system details through the contact form.
+</p>
+<h2>Data retention</h2>
+<p>
+We retain contact form submissions for up to 12 months so we can respond to requests, provide support, and maintain business records. After that period, submissions are deleted unless we are required to keep them longer for legal, accounting, or contractual reasons, or where an ongoing client relationship requires it.
 </p>
 <h2>Your choices</h2>
 <p>
